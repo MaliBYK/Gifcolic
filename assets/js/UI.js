@@ -6,6 +6,7 @@ class UI {
   showGIFsOnUI(GIFs) {
     console.log(GIFs);
     GIFs.data.forEach(gif => {
+      console.log(gif.url);
       this.resultBody.innerHTML += ` <img src="https://i.giphy.com/media/${gif.id}/giphy.webp" alt="GIF"/>`;
     });
   }

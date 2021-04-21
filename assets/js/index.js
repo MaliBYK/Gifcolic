@@ -11,6 +11,8 @@ const ui = new UI();
 function searchForGIF() {
   ui.clearBody();
   const keyword = input.value;
-  const dataList = request.getGIFsFromApi(keyword, 100);
-  console.log(dataList);
+  request
+    .getGIFsFromApi(keyword, 100)
+    .then(data => ui.showGIFsOnUI(data))
+    .catch(error => console.error(error));
 }
